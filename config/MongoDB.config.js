@@ -2,7 +2,7 @@
 const {decode} = require("../utilities/Utilities");
 
 module.exports = {
-    mongoURI: utilityFunction.decode(process.env.MONGO_URI),
+    mongoURI: decode(process.env.MONGO_URI),
     mongoSetup: {
         useNewUrlParser: true,
         useCreateIndex: true,
