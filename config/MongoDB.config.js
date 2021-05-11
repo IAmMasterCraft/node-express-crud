@@ -1,4 +1,5 @@
-const utilityFunction = require("../utils/Utilities");
+// import utility functions
+const {decode} = require("../utilities/Utilities");
 
 module.exports = {
     mongoURI: utilityFunction.decode(process.env.MONGO_URI),
