@@ -13,6 +13,9 @@ If there's an error in the request, the response should return the error message
 
 <b>The data you are required to create should contain name, email and country</b>
 
+## Hosted Link
+[https://nodejs-express-db-crud.herokuapp.com/api/v1](https://nodejs-express-db-crud.herokuapp.com/api/v1)
+
 ## Documentation
 Project has been hosted on [heroku](https://nodejs-express-db-crud.herokuapp.com/api/v1), kindly refer to the [Documentation here](https://documenter.getpostman.com/view/8570881/TzRUASZT)
 
