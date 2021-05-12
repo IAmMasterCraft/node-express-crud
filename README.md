@@ -44,7 +44,7 @@ Project has been hosted on [heroku](https://nodejs-express-db-crud.herokuapp.com
 - [MasterCraft](https://github.com/IAmMasterCraft)
 
 ### Create User Request
-<b>`Endpoint: https://nodejs-express-db-crud.herokuapp.com/api/v1/create-user`</b>
+<b>Endpoint: `https://nodejs-express-db-crud.herokuapp.com/api/v1/create-user`</b>
 This endpoint accepts a `POST` Request and creates user data
 - User data must be a `JSON Object` sent with request body
 - Return `HTTP STATUS CODE 201` if user creation was successful
@@ -60,21 +60,21 @@ This endpoint accepts a `POST` Request and creates user data
 ```
 
 ### Read All User Data Request
-<b>`Endpoint: https://nodejs-express-db-crud.herokuapp.com/api/v1/get-user`</b>
+<b>Endpoint: `https://nodejs-express-db-crud.herokuapp.com/api/v1/get-user`</b>
 This endpoint accepts a `GET` Request and returns all user data
 - Return `HTTP STATUS CODE 200` if data fetch was successful
 - Return `HTTP STATUS CODE 404` if data was not found
 - Return `HTTP STATUS CODE 500` if something went wrong with fetching data
 
 ### Read One User Data Request
-<b>`Endpoint: https://nodejs-express-db-crud.herokuapp.com/api/v1/get-user`</b>
+<b>Endpoint: `https://nodejs-express-db-crud.herokuapp.com/api/v1/get-user`</b>
 This endpoint accepts a `GET` Request and returns all user data
 - Return `HTTP STATUS CODE 200` if data fetch was successful
 - Return `HTTP STATUS CODE 404` if data was not found
 - Return `HTTP STATUS CODE 500` if something went wrong with fetching data
 
 ### Update User Request
-<b>`Endpoint: https://nodejs-express-db-crud.herokuapp.com/api/v1/update-user/email@mail.com`</b>
+<b>Endpoint: `https://nodejs-express-db-crud.herokuapp.com/api/v1/update-user/email@mail.com`</b>
 This endpoint accepts a `PUT` Request with `email` of the user as url parameter and updates the user data
 - User data to be updated must be a JSON Object sent with request body
 - Return `HTTP STATUS CODE 201` if data update was successful
