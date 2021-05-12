@@ -20,7 +20,7 @@ app.use(express.json());
 // cors setup for express app
 app.use(cors());
 // use routes
-app.use(process.env.API_VERSION, userRoutes);
+app.use("/api/v1", userRoutes);
 
 // connect to mongoose DB
 mongoose.connect(dbConfiguration.mongoURI, dbConfiguration.mongoSetup)
