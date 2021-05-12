@@ -41,7 +41,7 @@ It is a simple express application that:
 <br />
 - If there's an error in processing the request, the response will return the error message instead.
 #### Error Payload:
-```json
+``` raw(json)
 {
     message: String,
 }
