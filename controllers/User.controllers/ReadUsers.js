@@ -5,15 +5,15 @@ exports.readUsers = async (request, response) => {
     try {
         const email = request.params.email;
         // get user object;
-        const userData = (email) ? await User.findOne({ email: email }) : await User.findOne();
-        if (userData) {
+        const userData = (email) ? await User.find({ email: email }).sort({dateGenerated: -1}) : await User.find().sort({dateGenerated: -1});
+        if (userData.length > 0) {
             response.status(200).json({
                 message: "User Data fetched successfully!",
                 data: userData,
             });
         } else {
             response.status(404).json({
-                error: "User Data does not exist!"
+                error: "User Data does not found!"
             });
         }
         

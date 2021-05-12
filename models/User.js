@@ -1,36 +1,40 @@
 // import mongoose
-const mongoose = require("mongoose");
-// import utility functions to validate email
-const {isValidEmail} = require("../utilities/Utilities");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose"),
+    // import utility functions to validate email
+    {isValidEmail} = require("../utilities/Utilities"),
+    { catchDuplicateIndex } = require("../middlewares/DuplicateIndex.middleware"),
+    Schema = mongoose.Schema;
 
 //create User Schema
 const User = new Schema({
     name: {
         type: String,
-        required: true,
+        required: [true, "Name is required"],
     },
     email: {
         type: String,
-        required: true,
+        required: [true, "Email is required"],
         lowercase: true,
         index: { unique: true },
         validate: {
-            validator: isValidEmail(email),
+            validator: isValidEmail,
             message: props => `${props.value} is not a valid email address!`
         },
     },
     country: {
         type: String,
-        require: true,
+        require: [true, "Country is required"],
     },
     dateGenerated: {
         type: Date,
-        default: Date.now()
+        default: new Date()
     },
     dateUpdated: {
         type: Date,
     },
 });
 
-module.exports = mongoose.model("User", User);
+// apply middlewares
+User.post("save", catchDuplicateIndex);
+
+module.exports = mongoose.model("ZuriUser", User);

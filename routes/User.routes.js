@@ -11,10 +11,13 @@ const {createUser} = require("../controllers/User.controllers/CreateUser"),
 router.post("/create-user", createUser);
 
 // read user(s) with get request
-router.get("/get-user/:email", createUser);
+router.get("/get-user", readUsers);
+router.get("/get-user/:email", readUsers);
 
 // update a user with put request
-router.put("/update-user/:email", createUser);
+router.put("/update-user/:email", updateUser);
 
 // delete a user with delete request
-router.delete("/delete-user", createUser);
+router.delete("/delete-user", deleteUser);
+
+module.exports = router;

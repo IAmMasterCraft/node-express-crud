@@ -7,16 +7,23 @@ exports.updateUser = async (request, response) => {
         const {name, email, country} = request.body;
         if (oldEmail) {
             // get user object;
-            const updatedUser = await User.findOneAndUpdate({ email: oldEmail }, {name, email, country});
-            if (!updatedUser) {
-                response.status(404).json({
-                    error: "User does not exist!"
-                });
-            } else {
+            const updatedUser = await User.findOneAndUpdate(
+                { email: oldEmail }, 
+                {name, email, country},
+                {
+                    new: true,
+                    omitUndefined: true
+                },
+            );
+            if (updatedUser) {
                 // response
                 response.status(201).json({
                     message: "User updated successfully!",
                     data: updatedUser,
+                });
+            } else {
+                response.status(404).json({
+                    error: "User does not exist!"
                 });
             }
         } else {
@@ -25,7 +32,7 @@ exports.updateUser = async (request, response) => {
             });
         }
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         response.status(500).json({
             error: error.message,
         })

@@ -15,6 +15,8 @@ const express = require("express"),
     // import User routes
     userRoutes = require("./routes/User.routes");
 
+// parse application/json
+app.use(express.json());
 // cors setup for express app
 app.use(cors());
 // use routes
