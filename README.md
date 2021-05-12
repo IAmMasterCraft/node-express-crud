@@ -2,16 +2,14 @@
 
 ## CRUD: Create-Read-Update-Delete
 
+It is a simple express application that:
 1. Connects to a database
-2. Creates the payload: 
-{ message: String, data: Object }
-This means you are to return an object containing a message that tells the client if the request is successful or not, and data object containing your result.
-If there's an error in the request, the response should return the error message instead.
+2. Creates the given payload in the request
 3. Gets the data created
 4. Updates the data created
 5. Deletes the data created
 
-<b>The data you are required to create should contain name, email and country</b>
+<b>The request data should contain name, email and country</b>
 
 ## Hosted Link
 [https://nodejs-express-db-crud.herokuapp.com/api/v1](https://nodejs-express-db-crud.herokuapp.com/api/v1)
@@ -22,17 +20,11 @@ Project has been hosted on [heroku](https://nodejs-express-db-crud.herokuapp.com
 # CRUP App with Database
 <b>Description: </b>This API performs CRUD database operations. <br />
 <b>BASE_URL: `https://nodejs-express-db-crud.herokuapp.com/api/v1`</b>
-## Overview
-It is a simple express application that:
-1. Connects to a database
-2. Creates the given payload in the request
-3. Gets the data created
-4. Updates the data created
-5. Deletes the data created
+
 ### Response
 - Each request returns an object containing a message that tells the client if the request is successful or not, and data object containing the result.
 #### Success Payload:
-```json
+``` raw(json)
 {
     message: String,
     data: Object
