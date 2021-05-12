@@ -32,7 +32,9 @@ Project has been hosted on [heroku](https://nodejs-express-db-crud.herokuapp.com
 ```
 <br />
 - If there's an error in processing the request, the response will return the error message instead.
+
 #### Error Payload:
+
 ``` raw(json)
 {
     message: String,
